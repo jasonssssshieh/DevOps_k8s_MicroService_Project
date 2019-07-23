@@ -1,0 +1,6 @@
+在docker里面启动一个mysql:
+#!/bin/bash
+cur_dir = `pwd`
+docker stop jason-mysql
+docker rm jason-mysql
+docker run --name jason-mysql -v ${cur_dir}/conf:/etc/mysql/conf.d -v ${cur_dir}/data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=JasonJason -d mysql:lastest
